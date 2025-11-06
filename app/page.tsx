@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex items-center justify-center p-6">
       <div className="max-w-3xl mx-auto text-center">
-        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
           CSS Box Shadow Generator
         </h1>
 

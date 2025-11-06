@@ -40,7 +40,7 @@ export default function BoxShadowGenerator() {
           >
             ← Back to Home
           </Link>
-          <h1 className="text-4xl font-bold text-gray-900">CSS Box Shadow Generator</h1>
+          <h1 className="text-2xl md:text-4xl font-bold text-gray-900">CSS Box Shadow Generator</h1>
           <p className="text-gray-600 mt-2">
             Create beautiful box shadows with live preview
           </p>
