@@ -128,8 +128,8 @@ const presets: ShadowPreset[] = [
 
 export function Presets({ onSelectPreset }: PresetsProps) {
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-6">
-      <h2 className="text-xl font-semibold text-gray-900 mb-4">Presets</h2>
+    <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-6">
+      <h2 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">Presets</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
         {presets.map((preset) => (
           <button

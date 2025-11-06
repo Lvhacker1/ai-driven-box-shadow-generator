@@ -52,19 +52,19 @@ export function CodeDisplay({ shadows }: CodeDisplayProps) {
   };
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-6">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold text-gray-900">CSS Code</h2>
+    <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-6">
+      <div className="flex justify-between items-center mb-4 gap-3">
+        <h2 className="text-lg md:text-xl font-semibold text-gray-900">CSS Code</h2>
         <button
           onClick={copyToClipboard}
-          className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium"
+          className="px-3 md:px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-xs md:text-sm font-medium whitespace-nowrap"
         >
-          {copied ? 'Copied!' : 'Copy Code'}
+          {copied ? 'Copied!' : 'Copy'}
         </button>
       </div>
 
-      <div className="bg-gray-900 rounded-lg px-6 py-8 overflow-x-auto">
-        <pre className="text-sm text-gray-100 font-mono">
+      <div className="bg-gray-900 rounded-lg px-4 md:px-6 py-6 md:py-8 overflow-x-auto max-w-full">
+        <pre className="text-xs md:text-sm text-gray-100 font-mono whitespace-pre-wrap break-all">
           <code>{cssCode}</code>
         </pre>
       </div>
@@ -74,8 +74,8 @@ export function CodeDisplay({ shadows }: CodeDisplayProps) {
           <summary className="text-sm text-gray-600 cursor-pointer hover:text-gray-900 font-medium">
             Show with vendor prefixes
           </summary>
-          <div className="bg-gray-900 rounded-lg px-6 py-8 overflow-x-auto mt-2">
-            <pre className="text-sm text-gray-100 font-mono">
+          <div className="bg-gray-900 rounded-lg px-4 md:px-6 py-6 md:py-8 overflow-x-auto mt-2 max-w-full">
+            <pre className="text-xs md:text-sm text-gray-100 font-mono whitespace-pre-wrap break-all">
               <code>
                 {webkitCSS}
                 {'\n'}

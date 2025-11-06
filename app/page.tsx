@@ -2,20 +2,20 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center p-6">
-      <div className="max-w-3xl mx-auto text-center">
+    <main className="min-h-screen flex items-center justify-center p-4 md:p-6 w-full">
+      <div className="max-w-3xl mx-auto text-center w-full">
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
           CSS Box Shadow Generator
         </h1>
 
-        <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+        <p className="text-base md:text-xl text-gray-600 mb-6 md:mb-8 leading-relaxed">
           Create beautiful, professional box shadows visually with real-time preview.
           No more guessing values - see exactly how your shadows will look and get
           the CSS code instantly.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
+          <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
             <div className="text-3xl mb-3">🎨</div>
             <h3 className="font-semibold text-lg mb-2">Visual Control</h3>
             <p className="text-gray-600 text-sm">
@@ -23,7 +23,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
             <div className="text-3xl mb-3">📦</div>
             <h3 className="font-semibold text-lg mb-2">Multiple Layers</h3>
             <p className="text-gray-600 text-sm">
@@ -31,7 +31,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-white p-4 md:p-6 rounded-lg shadow-md">
             <div className="text-3xl mb-3">⚡</div>
             <h3 className="font-semibold text-lg mb-2">Instant Code</h3>
             <p className="text-gray-600 text-sm">
@@ -47,7 +47,7 @@ export default function Home() {
           Start Creating Shadows
         </Link>
 
-        <div className="mt-16 text-left bg-white p-8 rounded-lg shadow-md">
+        <div className="mt-12 md:mt-16 text-left bg-white p-4 md:p-8 rounded-lg shadow-md">
           <h2 className="text-2xl font-bold mb-4 text-gray-900">What is box-shadow?</h2>
           <p className="text-gray-700 mb-3">
             The CSS <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono">box-shadow</code> property

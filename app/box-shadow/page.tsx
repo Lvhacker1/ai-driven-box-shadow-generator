@@ -31,9 +31,9 @@ export default function BoxShadowGenerator() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
+    <div className="min-h-screen bg-gray-50 p-4 md:p-8 w-full">
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="mb-6 md:mb-8">
           <Link
             href="/"
             className="text-blue-600 hover:text-blue-700 text-sm font-medium mb-4 inline-block"
@@ -46,19 +46,19 @@ export default function BoxShadowGenerator() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          <div className="space-y-6">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
+          <div className="space-y-4 md:space-y-6">
             <ShadowPreview shadows={shadows} />
             <Presets onSelectPreset={handleSelectPreset} />
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             <ShadowList shadows={shadows} onUpdate={setShadows} />
             <CodeDisplay shadows={shadows} />
           </div>
         </div>
 
-        <div className="mt-12 bg-white rounded-lg border border-gray-200 p-6">
+        <div className="mt-8 md:mt-12 bg-white rounded-lg border border-gray-200 p-4 md:p-6">
           <h3 className="font-semibold text-gray-900 mb-3">Tips for Great Box Shadows</h3>
           <ul className="space-y-2 text-sm text-gray-700">
             <li>• Use multiple shadows for more realistic depth and Material Design effects</li>
