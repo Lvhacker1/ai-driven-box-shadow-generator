@@ -63,7 +63,7 @@ export function CodeDisplay({ shadows }: CodeDisplayProps) {
         </button>
       </div>
 
-      <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
+      <div className="bg-gray-900 rounded-lg px-6 py-8 overflow-x-auto">
         <pre className="text-sm text-gray-100 font-mono">
           <code>{cssCode}</code>
         </pre>
@@ -74,7 +74,7 @@ export function CodeDisplay({ shadows }: CodeDisplayProps) {
           <summary className="text-sm text-gray-600 cursor-pointer hover:text-gray-900 font-medium">
             Show with vendor prefixes
           </summary>
-          <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto mt-2">
+          <div className="bg-gray-900 rounded-lg px-6 py-8 overflow-x-auto mt-2">
             <pre className="text-sm text-gray-100 font-mono">
               <code>
                 {webkitCSS}
