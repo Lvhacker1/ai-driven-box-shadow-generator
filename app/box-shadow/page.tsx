@@ -21,6 +21,7 @@ export default function BoxShadowGenerator() {
       inset: false,
     },
   ]);
+  const [activePreset, setActivePreset] = useState<string | null>(null);
 
   const handleSelectPreset = (preset: ShadowPreset) => {
     const newShadows = preset.shadows.map((shadow, index) => ({
@@ -28,6 +29,12 @@ export default function BoxShadowGenerator() {
       id: `preset-shadow-${Date.now()}-${index}`,
     }));
     setShadows(newShadows);
+    setActivePreset(preset.name);
+  };
+
+  const handleShadowsUpdate = (newShadows: ShadowParams[]) => {
+    setShadows(newShadows);
+    setActivePreset(null);
   };
 
   return (
@@ -49,11 +56,11 @@ export default function BoxShadowGenerator() {
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
           <div className="space-y-4 md:space-y-6">
             <ShadowPreview shadows={shadows} />
-            <Presets onSelectPreset={handleSelectPreset} />
+            <Presets onSelectPreset={handleSelectPreset} activePreset={activePreset} />
           </div>
 
           <div className="space-y-4 md:space-y-6">
-            <ShadowList shadows={shadows} onUpdate={setShadows} />
+            <ShadowList shadows={shadows} onUpdate={handleShadowsUpdate} />
             <CodeDisplay shadows={shadows} />
           </div>
         </div>

@@ -4,6 +4,7 @@ import { ShadowPreset } from '@/types/shadow';
 
 interface PresetsProps {
   onSelectPreset: (preset: ShadowPreset) => void;
+  activePreset?: string | null;
 }
 
 const presets: ShadowPreset[] = [
@@ -126,25 +127,36 @@ const presets: ShadowPreset[] = [
   },
 ];
 
-export function Presets({ onSelectPreset }: PresetsProps) {
+export function Presets({ onSelectPreset, activePreset }: PresetsProps) {
   return (
     <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-6">
       <h2 className="text-lg md:text-xl font-semibold text-gray-900 mb-4">Presets</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-        {presets.map((preset) => (
-          <button
-            key={preset.name}
-            onClick={() => onSelectPreset(preset)}
-            className="text-left p-3 rounded-lg border-2 border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-all group"
-          >
-            <div className="font-semibold text-sm text-gray-900 group-hover:text-blue-700 mb-1">
-              {preset.name}
-            </div>
-            <div className="text-xs text-gray-500 group-hover:text-blue-600">
-              {preset.description}
-            </div>
-          </button>
-        ))}
+        {presets.map((preset) => {
+          const isActive = activePreset === preset.name;
+          return (
+            <button
+              key={preset.name}
+              onClick={() => onSelectPreset(preset)}
+              className={`text-left p-3 rounded-lg border-2 transition-all group ${
+                isActive
+                  ? 'border-blue-500 bg-blue-50'
+                  : 'border-gray-200 hover:border-blue-500 hover:bg-blue-50'
+              }`}
+            >
+              <div className={`font-semibold text-sm mb-1 ${
+                isActive ? 'text-blue-700' : 'text-gray-900 group-hover:text-blue-700'
+              }`}>
+                {preset.name}
+              </div>
+              <div className={`text-xs ${
+                isActive ? 'text-blue-600' : 'text-gray-500 group-hover:text-blue-600'
+              }`}>
+                {preset.description}
+              </div>
+            </button>
+          );
+        })}
       </div>
     </div>
   );
